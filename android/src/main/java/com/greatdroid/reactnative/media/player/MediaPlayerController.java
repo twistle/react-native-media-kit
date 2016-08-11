@@ -175,7 +175,7 @@ public class MediaPlayerController {
     final int contentType = Util.inferContentType(uri.getLastPathSegment());
     final String userAgent = Util.getUserAgent(context, "react-native-media-kit");
 
-    switch (contentType) {
+    switch (Util.TYPE_HLS) {
       case Util.TYPE_DASH:
         return new DashRenderersBuilder(context, userAgent, uriString, mainHandler, mediaDrmCallback, internalEventListener, internalEventListener, internalEventListener, bandwidthMeterListener, exoPlayer.getPlaybackLooper());
       case Util.TYPE_HLS:
