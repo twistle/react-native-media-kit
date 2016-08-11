@@ -320,7 +320,7 @@ public class MediaPlayerController {
     @Override
     public void onDrawnToSurface(Surface surface) {
       Log.i(TAG, "onDrawnToSurface...");
-      
+
     }
 
     @Override
