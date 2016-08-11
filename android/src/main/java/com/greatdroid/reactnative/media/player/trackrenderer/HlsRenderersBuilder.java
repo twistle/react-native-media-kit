@@ -93,7 +93,7 @@ public class HlsRenderersBuilder implements TrackRenderersBuilder, ManifestFetch
     PtsTimestampAdjusterProvider timestampAdjusterProvider = new PtsTimestampAdjusterProvider();
 
     DataSource dataSource = new DefaultUriDataSource(context, bandwidthMeter, userAgent);
-    HlsChunkSource chunkSource = new HlsChunkSource(true, dataSource, url,
+    HlsChunkSource chunkSource = new HlsChunkSource(true, dataSource,
       manifest, DefaultHlsTrackSelector.newDefaultInstance(context), bandwidthMeter,
       timestampAdjusterProvider, HlsChunkSource.ADAPTIVE_MODE_SPLICE);
     HlsSampleSource sampleSource = new HlsSampleSource(chunkSource, loadControl,
@@ -119,7 +119,7 @@ public class HlsRenderersBuilder implements TrackRenderersBuilder, ManifestFetch
     if (preferWebvtt) {
       DataSource textDataSource = new DefaultUriDataSource(context, bandwidthMeter, userAgent);
       HlsChunkSource textChunkSource = new HlsChunkSource(false, textDataSource,
-        url, manifest, DefaultHlsTrackSelector.newSubtitleInstance(), bandwidthMeter,
+        manifest, DefaultHlsTrackSelector.newSubtitleInstance(), bandwidthMeter,
         timestampAdjusterProvider, HlsChunkSource.ADAPTIVE_MODE_SPLICE);
       HlsSampleSource textSampleSource = new HlsSampleSource(textChunkSource, loadControl,
         TEXT_BUFFER_SEGMENTS * BUFFER_SEGMENT_SIZE, eventHandler, null, TRACK_TEXT_INDEX);
