@@ -186,7 +186,7 @@ export default class MediaPlayerView extends React.Component {
   }
 
   _onPlayerBufferChange(e) {
-    this.props.onPlayerBuffering && this.props.onPlayerBuffering(e);
+    this.props.onPlayerBufferChange && this.props.onPlayerBufferChange(e);
 
     if (this.props.controls) {
       this.setState({
